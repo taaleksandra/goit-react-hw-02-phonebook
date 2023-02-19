@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import clsx from 'clsx';
 import { nanoid } from 'nanoid';
 
+import css from '../ContactForm/ContactForm.module.css';
+
 export class ContactForm extends Component {
   handleSubmit = evt => {
     evt.preventDefault();
@@ -19,7 +21,7 @@ export class ContactForm extends Component {
   };
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form onSubmit={this.handleSubmit} className={clsx(css.form)}>
         <label htmlFor="name">Name</label>
         <input
           id="name"
@@ -38,7 +40,9 @@ export class ContactForm extends Component {
           title="Phone number must be digits and can contain spaces, dashes, parentheses and can start with +"
           required
         />
-        <button type="submit">Add contact</button>
+        <button type="submit" className={clsx(css.formBtn)}>
+          Add contact
+        </button>
       </form>
     );
   }

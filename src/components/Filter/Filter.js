@@ -1,15 +1,16 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
 
+import css from '../Filter/Filter.module.css';
+
 export class Filter extends Component {
   handleChange = evt => {
-    // console.log(evt.target.value);
     let searchingName = evt.target.value;
     return this.props.onChange(searchingName);
   };
   render() {
     return (
-      <div>
+      <div className={clsx(css.filter)}>
         <label htmlFor="filter">Find contacts by name</label>
         <input
           onChange={this.handleChange}

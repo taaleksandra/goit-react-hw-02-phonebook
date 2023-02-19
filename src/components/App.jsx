@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import clsx from 'clsx';
 
+import css from '../components/App.module.css';
+
 import { ContactForm } from './ContactForm/ContactForm';
 import { ContactList } from './ContactList/ContactList';
 import { Filter } from './Filter/Filter';
@@ -47,7 +49,7 @@ export class App extends Component {
   render() {
     const { contacts, filter } = this.state;
     return (
-      <div>
+      <div className={clsx(css.phonebook)}>
         <h1>Phonebook</h1>
         <ContactForm onSubmit={this.addContact} />
         <h1>Contacts</h1>
